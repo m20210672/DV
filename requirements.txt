@@ -1,5 +1,4 @@
 gunicorn
-matplotlib
 dash
 dash-core-components
 dash-html-components
