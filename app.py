@@ -7,7 +7,6 @@ from dash.dependencies import Input, Output, State
 import dash_daq as daq
 from dash import callback_context
 import dash_bootstrap_components as dbc
-from matplotlib import markers
 import numpy as np
 import pandas as pd
 from skimage import io
