@@ -1,5 +1,6 @@
 gunicorn
 dash
+tkinter
 dash-core-components
 dash-html-components
 dash_renderer
