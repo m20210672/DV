@@ -4,6 +4,7 @@ dash-core-components
 dash-html-components
 dash-daq
 dash-bootstrap-components
+matplotlib
 numpy
 pandas
 plotly
