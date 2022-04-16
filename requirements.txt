@@ -8,6 +8,5 @@ dash-bootstrap-components
 numpy
 pandas
 plotly
-plotly.graph_objs
 plotly.expressabsl-py==1.0.0
 
