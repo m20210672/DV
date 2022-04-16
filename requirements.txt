@@ -8,5 +8,3 @@ matplotlib
 numpy
 pandas
 plotly
-plotly.graph_objs
-plotly.express
