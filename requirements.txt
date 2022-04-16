@@ -4,7 +4,7 @@ dash-core-components
 dash-html-components
 dash_renderer
 dash-daq
-skimage
+scikit-image
 dash-bootstrap-components
 numpy
 pandas
