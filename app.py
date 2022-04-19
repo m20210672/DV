@@ -14,9 +14,6 @@ import plotly.express as px
 
 
 
-path ='https://raw.githubusercontent.com/m20210672/Data-Visualization-/main/Datasets/'
-
-
 total_data = pd.read_csv("total_data.csv",index_col='Unnamed: 0')
 vegetal_data = pd.read_csv("vegetal_data.csv",index_col='Unnamed: 0')
 grains_data = pd.read_csv("grains_data.csv",index_col='Unnamed: 0')
@@ -26,6 +23,7 @@ seafood_data = pd.read_csv("seafood_data.csv",index_col='Unnamed: 0')
 oils_data = pd.read_csv("oils_data.csv",index_col='Unnamed: 0')
 fish_data = pd.read_csv("fish_data.csv",index_col='Unnamed: 0')
 fruits_data = pd.read_csv("fruits_data.csv",index_col='Unnamed: 0')
+
 
 ##################################### Show Dataset ##################################################
 def dataset_of_choice(choice):
@@ -219,20 +217,8 @@ app.layout = html.Div([
         html.Div([
         html.H1(children=' Let us compare two different aliments!',style ={'color':'rgb(255,255,255)','margin-left':'260px' }),
         html.H2('First, you must choose the categories!',style ={ 'color':'rgb(255,255,255)','margin-left':'350px'}),
+        html.Div([ 
         html.Div([
-            html.Div([
-                html.Div([
-                    dcc.Dropdown(['Vegetables', 'Fruits','Grains','Dairy','Oils and Fat','Meat','Fish','Seafood'], 'Vegetables', id='drop_category_1'),
-                    ],className = 'choice3'),
-                    html.Br(), 
-                    html.Br(),
-                html.Div([
-                    dcc.Dropdown(id='drop3')],className = 'choice3'),
-                  html.Div([  
-                        dcc.Graph(id= 'calorie_2')],className = 'calorie_box_2'),
-                    ],className = 'box_4'),
-                html.Div([],className = 'image_pan'),
-            html.Div([
                 html.Div([
                     dcc.Dropdown(['Vegetables', 'Fruits','Grains','Dairy','Oils and Fat','Meat','Fish','Seafood'], 'Vegetables', id='drop_category_2'),
                     ],className = 'choice4'),
@@ -241,8 +227,21 @@ app.layout = html.Div([
             html.Div([
                 dcc.Dropdown(id='drop4',style = {'align':'right'})],className = 'choice4'),
                   html.Div([  
-                        dcc.Graph(id= 'calorie_3')],className = 'calorie_box_3'),
-                ],className = 'box_5'),
+                        dcc.Graph(id= 'calorie_3')],className = 'calorie_box_2'),
+                ],className = 'box_4'),
+
+                html.Div([],className = 'image_pan'),
+                            html.Div([
+                html.Div([
+                    dcc.Dropdown(['Vegetables', 'Fruits','Grains','Dairy','Oils and Fat','Meat','Fish','Seafood'], 'Vegetables', id='drop_category_1'),
+                    ],className = 'choice3'),
+                    html.Br(), 
+                    html.Br(),
+                html.Div([
+                    dcc.Dropdown(id='drop3')],className = 'choice3'),
+                  html.Div([  
+                        dcc.Graph(id= 'calorie_2')],className = 'calorie_box_3'),
+                    ],className = 'box_5'),
             ],className = 'center_box'),
             html.Div([
         dcc.Graph(id= 'radar',style = {'align':'right'}) 
@@ -612,7 +611,7 @@ def max_calories(drop3_value):
     fig.update_traces(hoverinfo='label+percent', textinfo='none')
     fig.update(layout_showlegend=False)
     fig.update_layout(font=dict(size=20))     
-    fig.update_traces(marker=dict(colors=['#d58923 ', 'rgb(255,255,255)']))
+    fig.update_traces(marker=dict(colors=['#fddcc3 ', 'rgb(255,255,255)']))
     fig.update_layout({
         'plot_bgcolor': 'rgba(0, 0, 0, 0)',
         'paper_bgcolor': 'rgba(0, 0, 0, 0)',})
@@ -689,7 +688,7 @@ def max_calories(drop4_value):
     fig.update_traces(hoverinfo='label+percent', textinfo='none')
     fig.update(layout_showlegend=False) 
     fig.update_layout(font=dict(size=20))  
-    fig.update_traces(marker=dict(colors=['#fddcc3', 'rgb(255,255,255)']))
+    fig.update_traces(marker=dict(colors=['#d58923', 'rgb(255,255,255)']))
     fig.update_layout({
         'plot_bgcolor': 'rgba(0, 0, 0, 0)',     
         'paper_bgcolor': 'rgba(0, 0, 0, 0)',})
@@ -739,4 +738,3 @@ def compare(drop3_value,drop4_value):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
