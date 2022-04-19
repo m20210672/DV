@@ -226,7 +226,7 @@ h2{
 .choice3{
   border-radius: 25px;  
   margin: 2px;
-  box-shadow: 6px 6px 6px #d58923;
+  box-shadow: 6px 6px 6px #fddcc3 ;
   justify-content: center;
   width: 250px;
   text-align: center;
@@ -235,7 +235,7 @@ h2{
 .choice4{
   border-radius: 25px;  
   margin: 2px;
-  box-shadow: 6px 6px 6px #fddcc3;
+  box-shadow: 6px 6px 6px #d58923;
   justify-content: center;
   width: 250px;
   text-align: center;
